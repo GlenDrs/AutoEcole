@@ -5,9 +5,6 @@ Rails.application.routes.draw do
   get 'messages/new'
   get 'messages/create'
   get 'messages/destroy'
-  get 'rooms/index'
-  get 'rooms/show'
-  get 'rooms/destroy'
   get 'timeslots/index'
   get 'timeslots/new'
   post 'timeslots/create'
@@ -20,6 +17,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :students, only: [:new, :edit, :create, :destroy, :update, :index]
     resources :calendar, only: [:new, :edit, :create, :destroy, :update]
+    resources :rooms, only: [:new, :create, :destroy]
   end
   devise_for :users, controllers: {
     registrations: 'users/registrations'
@@ -30,6 +28,7 @@ Rails.application.routes.draw do
 
   resources :lesson, only: [:create, :destroy]
   resources :calendar, only: [:index, :create, :new, :show]
+  resources :rooms, only: [:index, :show, :destroy]
   get 'home', to: 'static_pages#home'
   get 'accueille', to: 'static_pages#accueille'
   get 'permis_auto', to: 'static_pages#permis_auto'

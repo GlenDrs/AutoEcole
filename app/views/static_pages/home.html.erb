@@ -20,7 +20,16 @@
           <div class="sub-menu">
             <%= link_to "Accueil", accueille_path%>
             <%= link_to "Permis Auto", permis_auto_path %>
-            <%= link_to "Le Code en ligne", home_path %>
+            <% if user_signed_in? %>
+              <% if current_user.student != nil %>
+                <%= link_to "Le Code en ligne", accueille_path %>
+              <% else%>
+                <%= link_to "Le chat", rooms_path %>
+              <% end %>
+            <% else %>
+              <%= link_to "Mon Profile", new_user_session_path %>
+            <% end %>
+
             <% if user_signed_in? %>
               <% if current_user.teacher != nil %>
                 <%= link_to "Profil Professeur", teacher_show_path %>
