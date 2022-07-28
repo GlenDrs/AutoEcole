@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'messages/index'
+  get 'messages/show'
+  get 'messages/new'
+  get 'messages/create'
+  get 'messages/destroy'
+  get 'rooms/index'
+  get 'rooms/show'
+  get 'rooms/destroy'
   get 'timeslots/index'
   get 'timeslots/new'
   post 'timeslots/create'
