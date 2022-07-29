@@ -1,0 +1,10 @@
+<%= form_with(model: @room.messages, url: messages_create_path) do |f|%>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <div class="input-group">
+    <%= f.text_field :content, placeholder: "Ecrivez le message", class: 'form-control' %>
+      <%= f.hidden_field :room_id, value: params[:id] %>
+    <div class="input-group-append">
+      <%= f.submit "Envoyer", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

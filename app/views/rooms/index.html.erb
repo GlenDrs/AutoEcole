@@ -1,4 +1,14 @@
 <h1>les chat-rooms</h1>
-<% @rooms.each do |chatroom|%>
-  <h5> <%= chatroom.name %> </h5><br>
-<% end %>
+<div class="row">
+  <div class="col-3">
+    <% @rooms.each do |chatroom|%>
+      <%= link_to chatroom do %>
+        <div class="chat-rooms">
+          <div class="card" >
+            <h5> <%= chatroom.name %> </h5><br>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'messages/index'
-  get 'messages/show'
-  get 'messages/new'
-  get 'messages/create'
-  get 'messages/destroy'
   get 'timeslots/index'
   get 'timeslots/new'
   post 'timeslots/create'
+
+  get 'messages/index'
+  get 'messages/new'
+  post 'messages/create'
+
   get 'teacher/index'
   get 'teacher/show'
   get 'teacher/new'
@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   resources :lesson, only: [:create, :destroy]
   resources :calendar, only: [:index, :create, :new, :show]
   resources :rooms, only: [:index, :show, :destroy]
+  #resources :messages, only: [:index, :new, :create, :show, :destroy]
   get 'home', to: 'static_pages#home'
   get 'accueille', to: 'static_pages#accueille'
   get 'permis_auto', to: 'static_pages#permis_auto'

@@ -1,2 +1,12 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<h2>Chat-Room ||<%= @room.name %>|| </h2><br/><br/>
+
+<div class="chat-box">
+  <h4> Messages </h4>
+    <% @messages.each do |message| %>
+      <td><%= message.content %></td><br/>
+    <% end %><br/><br/>
+    <hr>
+
+  <%= render 'messages/form', message: @room.messages %>
+
+</div>

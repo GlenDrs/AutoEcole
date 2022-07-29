@@ -1,3 +1,16 @@
 // Place all the styles related to the Rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.chat-rooms{
+  text-align: center;
+  text-decoration: none;
+  color: rgb(50, 49, 49);
+}
+
+.chat-rooms :hover{
+  text-decoration: none;
+  background-color: rgb(212, 196, 196);
+  color: rgb(17, 17, 111);
+}
