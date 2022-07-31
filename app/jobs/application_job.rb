@@ -1,7 +1,18 @@
-class ApplicationJob < ActiveJob::Base
-  # Automatically retry jobs that encountered a deadlock
-  # retry_on ActiveRecord::Deadlocked
+class SendMessageJob < ActiveJob::Base
+  queue_as :default
 
-  # Most jobs are safe to ignore if the underlying records are no longer available
-  # discard_on ActiveJob::DeserializationError
+  def perform(message)
+    mine = ApplicationController.render(
+      partial: 'messages/mine',
+      locals: { message: message }
+    )
+
+    theirs = ApplicationController.render(
+      partial: 'messages/theirs',
+      locals: { message: message }
+    )
+
+    ActionCable.server.broadcast "room_channel_#{message.room_id}", mine: mine, theirs: theirs, message: message
+  end
+
 end

@@ -13,8 +13,10 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-      redirect_to room_path(message_params[:room_id])
+      RoomChannel.broadcast_to @message.room_id, @message
+      #redirect_to room_path(message_params[:room_id])
     end
+    #SendMessageJob.perform_later(@message)
   end
 
   def destroy

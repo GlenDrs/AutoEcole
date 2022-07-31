@@ -1,15 +1,18 @@
 # README
 
+### Le document "identifiants.txt" a les identifiants d'admin teachers et students.
+
 ## L'application a Troi parties importantes:
 
-### Nouveau! chatroom pour les profs
-
 1. L'admin, Il(s) peut sélectionner  l'étudiant et lui ajouter des crédits, créer les jours des cours et les créneaux. les créneaux s'adaptent automatiquement à la spécificité du jour.
+### Nouveau! chatroom pour les profs
 L'admin peut maintenant créer des chatrooms pour les profs!
 
 2. L'étudaiant (student). Il peut sélectionner les créneaux quand il veut faire un cours de conduite, vérifier son profile ou il y aura affiché les séances et les crédits qui lui restent. Les cours déjà réservés ne peuvent plus être sélectionné par les autres 'students'. Quand le cours dépasse n'est plus à jour, il  n'apparait plus.
+### Nouveau! chatroom pour les profs
+Les profs peuvent communiquer dans un des chatrooms créait par l'admin.
 
-- L'Étudiant peut supprimer les cours qu'il a déjà réservées sauf les cours dans les prochaines 48 heures.
+- L'Étudiant peut supprimer les cours qu'il a déjà réservées sauf les cours dans les prochaines 48 heures. Pas encore des chatrooms pour les étudiants!
 
 - Le crédit de l'étudaint baisse quand il réserve une séance et augmente quand il l'annule.
 

@@ -1,0 +1,12 @@
+Les identifiants ont tous le même mot de passe:
+'aaaaaa'
+
+Les emails des profs (teachers):
+  stuart_mraz@schumm-orn.name
+  christoper.kulas@reilly.net
+
+Les emails des étudaints (student):
+  dixie@howe-oreilly.name
+  gayle.green@collins-raynor.name
+  flossie.grimes@dubuque-white.com
+  richie@bayer-brown.info
