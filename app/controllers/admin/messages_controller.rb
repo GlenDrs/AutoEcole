@@ -1,5 +1,6 @@
 class Admin::MessagesController < ApplicationController
-  #before_action set_admin_msg, only: %i[:new :create :destroy]
+  before_action :authenticate_admin
+
   def new
     @message_admin = Message.new
   end
@@ -21,4 +22,12 @@ class Admin::MessagesController < ApplicationController
   def message_params
     params.require(:message).permit(:content, :room_id, :user_id)
   end
+
+  def authenticate_admin
+    unless current_user&.admin
+      flash[:error] = "You're not a adminstrator"
+      redirect_to root_path
+    end
+  end
+
 end

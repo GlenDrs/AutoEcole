@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :check_teacher_admin, except: [:index, :show]
+  before_action :check_teacher_admin
   before_action :set_room, only: %i[show]
 
   def index

@@ -10,7 +10,10 @@
     <!-- <div id="messages"> </div> -->
     <hr>
 
-  <%= render 'messages/form', message: @room.messages %>
-  <%= render 'admin/messages/form', message: @room.messages %>
+  <% if current_user.admin == true%>
+    <%= render 'admin/messages/form', message: @room.messages %>
+  <% else %>
+    <%= render 'messages/form', message: @room.messages %>
+  <% end %>
 
 </div>

@@ -1,4 +1,5 @@
 class RoomChannel < ApplicationCable::Channel
+=begin
   def subscribed
     #stream_from "room_channel"
     #reject unless params[:room_id]
@@ -10,4 +11,5 @@ class RoomChannel < ApplicationCable::Channel
   def unsubscribed
     #Any cleanup needed when channel is unsubscribed
   end
+=end
 end

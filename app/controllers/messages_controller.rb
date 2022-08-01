@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_action :check_teacher
 
   def index
     @messages = Message.all
@@ -24,6 +25,12 @@ class MessagesController < ApplicationController
   end
 
   private
+  def check_teacher
+    unless current_user.teacher != nil
+      redirect_to '/', :alert => "Don't have permission!"
+    end
+  end
+
   def message_params
     params.require(:message).permit(:content, :room_id, :user_id)
   end
