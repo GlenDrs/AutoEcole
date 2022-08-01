@@ -1,5 +1,4 @@
 class MessagesController < ApplicationController
-  #before_action :set_message, only: %i[new create show destroy]
 
   def index
     @messages = Message.all
@@ -25,10 +24,6 @@ class MessagesController < ApplicationController
   end
 
   private
-  def set_message
-    @message = Message.find(params[:id])
-  end
-
   def message_params
     params.require(:message).permit(:content, :room_id, :user_id)
   end
