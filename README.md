@@ -1,6 +1,5 @@
 # README
 
-### Le document "identifiants.txt" a les identifiants d'admin teachers et students.
 
 ## L'application a Troi parties importantes:
 
