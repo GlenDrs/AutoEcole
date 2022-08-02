@@ -34,6 +34,9 @@ def student_create
 end
 
 def destroy_all_models
+  Message.destroy_all
+  Room.destroy_all
+  Lesson.destroy_all
   Timeslot.destroy_all
   Calendar.destroy_all
   Teacher.destroy_all
