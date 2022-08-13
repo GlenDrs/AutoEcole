@@ -1,3 +1,27 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.chat-room{
+  merge: auto;
+}
+
+.chat-msg-others{
+  text-align: left;
+  border: solid;
+  border-color: black;
+  background-color: aquamarine;
+  padding: 5px;
+  border-radius: 20%;
+  display: inline-block;
+}
+
+.chat-msg-current{
+  text-align:right;
+  border: solid;
+  border-color: black;
+  background-color: rgb(85, 131, 184);
+  padding: 5px;
+  border-radius: 20%;
+  display: inline-block;
+}
