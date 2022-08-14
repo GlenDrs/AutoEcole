@@ -1,1 +1,2 @@
-$("#chat-msg-others").prepend("<%= escape_javascript render(message: @message) %>");
+document.getElementById("chat-msg-others").insertAdjacentHTML("beforeend", "<%= j render 'message', message: @message %>")
+document.getElementById("chat-msg-current").insertAdjacentHTML("beforeend", "<%= j render 'message', message: @message %>")
