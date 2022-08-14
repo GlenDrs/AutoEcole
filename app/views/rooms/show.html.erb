@@ -5,12 +5,13 @@
   <% @messages.each do |message| %>
     <% if current_user.id == message.user_id %>
       <div id="chat-msg-current" class="chat-msg-current">
-          <td>
-            <%= message.content %><br/>
-            <p style="color:black;">
-              Toi:
-            </p>
-          </td>
+        <td>
+          <%= message.content %><br/>
+          <p style="color:black;">
+            Toi:
+          </p>
+          <%= message.created_at.strftime("%H:%M") %>
+        </td>
       </div><br/>
     <% else %>
       <div id="chat-msg-others" class="chat-msg-others">
@@ -19,6 +20,7 @@
           <p style="color:green;">
             <%= User.find(message.user_id).email %>
           </p>
+          <%= message.created_at.strftime("%H:%M") %>
         </td>
       </div><br/>
     <% end %>
