@@ -13,17 +13,17 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
-    if @message.save
+    @message = Message.create(message_params)
+    respond_to do |format|
+      if @message.save
 =begin
       #ActionCable.server.broadcast("room_channel", {content: @message.content})
       #RoomChannel.broadcast_to @message.room, @message.content
       redirect_to room_path(id: message_params[:room_id])
     end
 =end
-      respond_to do |format|
         format.html { redirect_to room_path(message_params[:room_id]) }
-        format.js { }
+        format.js
       end
     end
   end

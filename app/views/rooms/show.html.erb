@@ -1,26 +1,18 @@
 <h2>Chat-Room ||<%= @room.name %>|| </h2><br/><br/>
 
-<div class="chat-room">
+<div id="chat-room">
   <h4 style="text-align:center;"> Messages </h4>
   <% @messages.each do |message| %>
     <% if current_user.id == message.user_id %>
       <div id="chat-msg-current" class="chat-msg-current">
         <td>
-          <%= message.content %><br/>
-          <p style="color:black;">
-            Toi:
-          </p>
-          <%= message.created_at.strftime("%H:%M") %>
+          <%= render 'messages/message', message: message %>
         </td>
       </div><br/>
     <% else %>
       <div id="chat-msg-others" class="chat-msg-others">
         <td>
-          <%= message.content %><br/>
-          <p style="color:green;">
-            <%= User.find(message.user_id).email %>
-          </p>
-          <%= message.created_at.strftime("%H:%M") %>
+          <%= render 'messages/message', message: message %>
         </td>
       </div><br/>
     <% end %>

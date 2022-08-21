@@ -9,7 +9,7 @@ class RoomsController < ApplicationController
   def show
     @messages = @room.messages
     #@room = Room.find(params[:id])
-    @message = Message.new
+    @messages = Message.all
     #render 'index'
   end
 

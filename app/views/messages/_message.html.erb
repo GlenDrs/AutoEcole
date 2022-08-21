@@ -1,0 +1,5 @@
+<tr id="msg" <%= message.id %>>
+  <td><%= message.content %></td><br/>
+  <td><%= User.find(message.user_id).email %></td><br/>
+  <td><%= message.created_at.strftime("%H:%M") %></td>
+</tr>
