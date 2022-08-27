@@ -9,8 +9,7 @@ module Admin
     def create
       (0..end_date_loop).each do |i|
         iterated_day = start_date_selected + i
-        calendar_adm = Calendar.new(teacher_id: current_user.teacher.id, reference_day: iterated_day)
-        calendar_adm.save
+        calendar_adm = Calendar.new(teacher_id: current_user.teacher.id, reference_day: iterated_day).save
       end
     end
 

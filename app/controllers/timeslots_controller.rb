@@ -16,30 +16,27 @@ class TimeslotsController < ApplicationController
       day = calendar.reference_day.strftime('%A')
       if day == "Monday"
         (0..length1).each do |x|
-          final_slots = Timeslot.new(teacher_id: current_user.teacher.id,
+          Timeslot.new(teacher_id: current_user.teacher.id,
           start_slot: looping_slots(morning_start + (4 * 3600 ))[x],
           end_slot: looping_slots(morning_start + (5 * 3600))[x],
           calendar_id: calendar.id
-          )
-          final_slots.save
-        end
-      elsif day == "Tuesday" || day == "Wednesday" || day == "Friday" || day == "Thursday"
-        (0..length2).each do |x|
-          final_slots = Timeslot.new(teacher_id: current_user.teacher.id,
-          start_slot: loop_full_day(morning_start)[x],
-          end_slot: loop_full_day(morning_start + 3600)[x],
-          calendar_id: calendar.id
-          )
-          final_slots.save
+          ).save
         end
       elsif day == "Saturday"
         (0..length1).each do |x|
-          final_slots = Timeslot.new(teacher_id: current_user.teacher.id,
+          Timeslot.new(teacher_id: current_user.teacher.id,
           start_slot: looping_slots(morning_start)[x],
           end_slot: looping_slots(morning_start + 3600)[x],
           calendar_id: calendar.id
-          )
-          final_slots.save
+          ).save
+        end
+      elsif day == "Tuesday" || day == "Wednesday" || day == "Friday" || day == "Thursday"
+        (0..length2).each do |x|
+          Timeslot.new(teacher_id: current_user.teacher.id,
+          start_slot: loop_full_day(morning_start)[x],
+          end_slot: loop_full_day(morning_start + 3600)[x],
+          calendar_id: calendar.id
+          ).save
         end
       end
     end

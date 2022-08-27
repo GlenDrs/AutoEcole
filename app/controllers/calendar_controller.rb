@@ -17,9 +17,7 @@ class CalendarController < ApplicationController
   def create
     (0..end_date_loop).each do |i|
       iterated_day = start_date_selected + i
-      calendar = Calendar.new(:teacher_id => current_user.teacher.id,
-      :reference_day => iterated_day)
-      calendar.save
+      calendar = Calendar.new(:teacher_id => current_user.teacher.id, :reference_day => iterated_day).save
     end
     redirect_to calendar_index_path
   end

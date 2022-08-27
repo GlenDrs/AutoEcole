@@ -1,2 +1,6 @@
-<h1>Admin::Timeslots#new</h1>
-<p>Find me in app/views/admin/timeslots/new.html.erb</p>
+<h1>Lancer les créneaux</h1>
+<%= form_with(model: [:admin, @timeslots_adm], url: admin_timeslots_path) do |f|%>
+  <div class="form-group">
+    <%= f.submit "Créer les créneaux" %>
+  </div>
+<% end %>
