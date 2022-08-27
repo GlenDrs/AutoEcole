@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get 'timeslots/new'
+    get 'timeslots/create'
+    get 'timeslots/destroy'
+  end
+  namespace :admin do
     get 'calendar/new'
     get 'calendar/create'
   end
@@ -20,6 +25,7 @@ Rails.application.routes.draw do
     resources :calendar, only: [:new, :create, :destroy]
     resources :rooms, only: [:new, :create, :destroy]
     resources :messages, only: [:new, :create, :destroy]
+    resources :timeslots, only: [:new, :create, :destroy]
   end
   devise_for :users, controllers: {
     registrations: 'users/registrations'
