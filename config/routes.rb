@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'calendar/new'
+    get 'calendar/create'
+  end
   get 'timeslots/index'
   get 'timeslots/new'
   post 'timeslots/create'
@@ -13,7 +17,7 @@ Rails.application.routes.draw do
   get 'admin/show'
   namespace :admin do
     resources :students, only: [:new, :edit, :create, :destroy, :update, :index]
-    resources :calendar, only: [:new, :edit, :create, :destroy, :update]
+    resources :calendar, only: [:new, :create, :destroy]
     resources :rooms, only: [:new, :create, :destroy]
     resources :messages, only: [:new, :create, :destroy]
   end

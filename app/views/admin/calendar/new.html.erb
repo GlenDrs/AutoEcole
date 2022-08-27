@@ -1,0 +1,13 @@
+<h3> Création de calendrier</h3>
+
+<%= form_with(model: [:admin, @calendar_adm], url: admin_calendar_index_path) do |f| %>
+
+  <div class="form-group">
+    <label> Choisissez le premier jour du calendrier</label>
+    <%= f.date_select :start_date, :order => [:day, :month, :year] %><br>
+    <label> Choisissez le dernièr jour du calendrier</label>
+    <%= f.date_select :end_date, :order => [:day, :month, :year] %><br>
+    <%= f.submit "Créer les jours" %>
+  </div>
+
+<% end %>

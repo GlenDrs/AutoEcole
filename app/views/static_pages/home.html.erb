@@ -31,7 +31,7 @@
             <% end %>
 
             <% if user_signed_in? %>
-              <% if current_user.teacher != nil %>
+              <% if current_user.teacher != nil && current_user.admin != true %>
                 <%= link_to "Profil Professeur", teacher_show_path %>
               <% elsif current_user.admin != true %>
                 <%= link_to "Mon Profile", student_show_path %>
